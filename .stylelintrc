@@ -1,0 +1,9 @@
+{
+  "extends": "@sparkbox/stylelint-config-sparkbox",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+
+  }
+}

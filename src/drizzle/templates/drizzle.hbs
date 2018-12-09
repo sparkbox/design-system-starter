@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="drizzle-Layout no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" href="/css/drizzle.css">
+    <link rel="stylesheet" href="/css/base.css">
+  </head>
+  <body class="drizzle-Layout-body">
+    {{> drizzle.sidebar}}
+
+    <div class="drizzle-Layout-main drizzle-u-cf">
+      <div class="drizzle-u-pad drizzle-u-rhythm">
+        {{#block "body"}}
+          {{#block "main"}}
+
+          {{/block}}
+        {{/block}}
+      </div>
+    </div>
+
+    <script src="/js/drizzle.js"></script>
+  </body>
+</html>

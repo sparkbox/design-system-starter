@@ -1,0 +1,25 @@
+---
+title: Colors
+layout: drizzle
+---
+
+<h1 class="heading_1">{{title}}</h1>
+
+{{#each (data "docs-colors")}}
+  <h2 class="heading_4 drizzle-u-capitalize">{{@key}}</h2>
+
+  <ul class="drizzle-u-listInline">
+    {{#each this}}
+      <li class="drizzle-u-marginBottom">
+        <figure class="drizzle-u-noMarginLeft">
+          <div class="drizzle-Swatch" style="background:{{color}};"></div>
+          <figcaption class="drizzle-u-textSmaller">
+            <ul class="drizzle-u-listUnstyled">
+              {{#if property}}<li><code>{{property}}</code></li>{{/if}}
+            </ul>
+          </figcaption>
+        </figure>
+      </li>
+    {{/each}}
+  </ul>
+{{/each}}
