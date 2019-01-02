@@ -4,24 +4,3 @@ layout: drizzle
 ---
 
 <h1 class="heading_1">{{title}}</h1>
-
-{{#each (data "docs-typography")}}
-  <h2 class="heading_4 drizzle-u-capitalize">{{@key}}</h2>
-
-  <table width="100%">
-    <thead>
-      <tr>
-        <th class="drizzle-u-textLeft">Sample Text</th>
-        <th class="drizzle-u-textLeft">Sample Code</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each this}}
-        <tr>
-          <td>{{{code}}}</td>
-          <td><code class="language-html">{{code}}</code></td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-{{/each}}

@@ -5,21 +5,20 @@ layout: drizzle
 
 <h1 class="heading_1">{{title}}</h1>
 
-{{#each (data "docs-colors")}}
-  <h2 class="heading_4 drizzle-u-capitalize">{{@key}}</h2>
-
-  <ul class="drizzle-u-listInline">
-    {{#each this}}
-      <li class="drizzle-u-marginBottom">
-        <figure class="drizzle-u-noMarginLeft">
-          <div class="drizzle-Swatch" style="background:{{color}};"></div>
-          <figcaption class="drizzle-u-textSmaller">
-            <ul class="drizzle-u-listUnstyled">
-              {{#if property}}<li><code>{{property}}</code></li>{{/if}}
-            </ul>
-          </figcaption>
-        </figure>
-      </li>
-    {{/each}}
-  </ul>
-{{/each}}
+<ul class="drizzle-u-listInline">
+  {{#each (data "docs-colors")}}
+    <li class="drizzle-u-marginBottom">
+      <figure class="drizzle-u-noMarginLeft">
+        <svg width="160" height="90" viewBox="0 0 160 90">
+          <rect x="0" y="0" width="160" height="90" fill="{{color}}" />
+        </svg>
+        <figcaption class="drizzle-u-textSmaller">
+          <ul class="drizzle-u-listUnstyled">
+            <li><code>{{color}}</code></li>
+            {{#if property}}<li><code>{{property}}</code></li>{{/if}}
+          </ul>
+        </figcaption>
+      </figure>
+    </li>
+  {{/each}}
+</ul>
