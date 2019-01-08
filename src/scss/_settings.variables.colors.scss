@@ -1,0 +1,22 @@
+// Grayscale Function
+@function gray($level) {
+ @return lighten(black, $level * 1%);
+}
+
+$c-white: gray(100);
+$c-gray-98: gray(98);
+$c-gray-95: gray(95);
+$c-gray-90: gray(90);
+$c-gray-85: gray(85);
+$c-gray-80: gray(80);
+$c-gray-75: gray(75);
+$c-gray-70: gray(70);
+$c-gray-60: gray(60);
+$c-gray-50: gray(50);
+$c-gray-45: gray(45);
+$c-gray-40: gray(40);
+$c-gray-30: gray(30);
+$c-gray-20: gray(20);
+$c-gray-15: gray(15);
+$c-gray-10: gray(10);
+$c-black: gray(0);
