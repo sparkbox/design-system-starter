@@ -14,3 +14,12 @@ layout: drizzle
   </li>
 {{/each}}
 </ul>
+
+<h2>Documentation</h2>
+<ul>
+{{#each (pages "system" sortby="order")}}
+  <li>
+    <a href="{{url}}">{{{data.title}}}</a>
+  </li>
+{{/each}}
+</ul>
