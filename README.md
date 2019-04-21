@@ -11,7 +11,7 @@ Setup
 
   - Clear any previously built project files
   - Build project files
-  - Start the server
+  - Start the server (localhost:3000)
   - Run watch tasks
 
 Drizzle

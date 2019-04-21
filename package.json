@@ -5,9 +5,8 @@
   "author": "Kasey Bonifacio <kasey@heysparkbox.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm start",
     "prestart": "npm run clean",
-    "start": "check-node-version --package && node tasks/start.js",
+    "start": "node tasks/start.js",
     "test": "npm run pa11y && npm run stylelint",
     "clean": "rimraf dist/",
     "server": "node tasks/server.js",
@@ -22,10 +21,9 @@
     "npm": "~6.4.1"
   },
   "dependencies": {
-    "@sparkbox/downpour": "^0.0.10",
+    "@sparkbox/downpour": "^0.0.11",
     "@sparkbox/stylelint-config-sparkbox": "^0.2.0",
     "bluebird": "^3.5.3",
-    "check-node-version": "^3.2.0",
     "chokidar": "^2.0.4",
     "express": "^4.15.2",
     "lodash": "^4.17.5",
