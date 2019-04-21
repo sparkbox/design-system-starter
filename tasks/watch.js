@@ -16,5 +16,5 @@ chokidar.watch('src/public/**/*').on('change', () => {
 });
 
 chokidar.watch('src/js/**/*').on('change', () => {
-  shell.exec('npm run scripts');
+  shell.exec('npm run js');
 });
