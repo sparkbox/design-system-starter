@@ -17,8 +17,31 @@ Setup
 Drizzle
 -------
 
-The pattern library will be powered by [Drizzle](https://github.com/cloudfour/drizzle) and will be organized by:
+The pattern library is be powered by [Drizzle](https://github.com/cloudfour/drizzle) and will be organized by:
 - [Data](https://github.com/cloudfour/drizzle/tree/master/docs#data)
 - [Pages](https://github.com/cloudfour/drizzle/tree/master/docs#pages)
 - [Patterns](https://github.com/cloudfour/drizzle/tree/master/docs#patterns)
 - [Templates](https://github.com/cloudfour/drizzle/tree/master/docs#templates)
+
+Public
+------
+
+The contents of the `public/` directory will be copied directly into the root of the `dist/` directory.
+
+Sass
+----
+
+All CSS is compiled from [Sass](https://sass-lang.com/) and can be found in the `scss/` directory. Any files not prefixed with an underscore will compile to `dist/css/`.
+
+JavaScript
+----------
+All JavaScript is compiled with [Webpack](https://webpack.js.org/) and can be found in the `js/` directory. All JavaScript files should be imported into `index.js` which will then be compiled to `dist/js/scripts.js`.
+
+Testing
+-------
+
+Running `npm test` will run the following tasks:
+
+- `pa11y`: Runs accessibility tests on all HTML files in the `dist/` directory
+- `stylelint`: Checks all CSS  in the `dist/` for errors and enforces [Sparkbox's code conventions](https://www.npmjs.com/package/@sparkbox/stylelint-config-sparkbox)
+- `eslint`: Checks all JavaScript  in the `dist/` for errors and enforces [Sparkbox's code conventions](https://www.npmjs.com/package/eslint-config-sparkbox)
