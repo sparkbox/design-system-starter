@@ -1,0 +1,55 @@
+$grid-count: 12;
+$grid-gutter: 1.125rem;
+
+@mixin column-span($span) {
+  // IE Fallback
+  float: left;
+  width: ($span / $grid-count) * 100%;
+
+  @supports (display: grid) {
+    width: auto;
+    grid-column: span $span;
+  }
+}
+
+.obj-grid {
+  // IE Fallback
+  display: flex;
+  flex-wrap: wrap;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: $grid-gutter;
+    grid-template-columns: repeat($grid-count, 1fr);
+  }
+
+  &__full {
+    @include column-span(12);
+  }
+
+  &__half {
+    @include column-span(6);
+  }
+
+  &__third {
+    @include column-span(4);
+  }
+
+  &__quarter {
+    @include column-span(3);
+  }
+}
+
+// Recreates the grid gutter by adding padding to the grid columns
+// and setting negative margin to the grid container so that the
+// edges of columns line up with elements on the page.
+.ie11 {
+  .obj-grid {
+    margin: -($grid-gutter / 2);
+  }
+
+  [class*="obj-grid__"] {
+    box-sizing: border-box;
+    padding: ($grid-gutter / 2);
+  }
+}
