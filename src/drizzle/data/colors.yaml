@@ -1,0 +1,45 @@
+grayscale:
+  - name: "gray(100)"
+    color: "#ffffff"
+    lightscore: ❌ Fail
+    darkscore: ✅ Pass
+  - name: "gray(90)"
+    color: "#E3E3E3"
+    lightscore: ❌ Fail
+    darkscore: ✅ Pass
+  - name: "gray(80)"
+    color: "#CCCCCC"
+    lightscore: ❌ Fail
+    darkscore: ✅ Pass
+  - name: "gray(70)"
+    color: "#B0B0B0"
+    lightscore: ❌ Fail
+    darkscore: ✅ Pass
+  - name: "gray(60)"
+    color: "#999999"
+    lightscore: ❌ Fail
+    darkscore: ✅ Pass
+  - name: "gray(50)"
+    color: "#808080"
+    lightscore: ✅ Large Text
+    darkscore: ✅ Pass
+  - name: "gray(40)"
+    color: "#696969"
+    lightscore: ✅ Pass
+    darkscore: ✅ Large Text
+  - name: "gray(30)"
+    color: "#4D4D4D"
+    lightscore: ✅ Pass
+    darkscore: ❌ Fail
+  - name: "gray(20)"
+    color: "#363636"
+    lightscore: ✅ Pass
+    darkscore: ❌ Fail
+  - name: "gray(10)"
+    color: "#171717"
+    lightscore: ✅ Pass
+    darkscore: ❌ Fail
+  - name: "gray(0)"
+    color: "#000000"
+    lightscore: ✅ Pass
+    darkscore: ❌ Fail
