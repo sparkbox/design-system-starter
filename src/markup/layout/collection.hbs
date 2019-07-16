@@ -1,0 +1,18 @@
+---
+title: Components
+---
+
+{{#extend "drizzle"}}
+  {{#content "main"}}
+    <h1 class="drizzle-u-capitalize">{{name}}</h1>
+
+    {{#if notes}}
+      {{{markdown notes}}}
+    {{/if}}
+    
+
+    {{#each patterns}}
+      {{> patterns.drizzle.partials.item}}
+    {{/each}}
+  {{/content}}
+{{/extend}}

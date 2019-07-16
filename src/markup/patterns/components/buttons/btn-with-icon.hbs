@@ -1,0 +1,31 @@
+---
+name: Btn (with Icon)
+order: 5
+notes: |
+  Icons can be added to buttons by using the [SVG sprite sheet](/svg/symbol/sprite.symbol.html)
+
+variantGroups:
+  - name: Color
+    set:
+      - c-btn--primary
+      - c-btn--secondary
+      - c-btn--tertiary
+  - name: Size
+    set:
+      - ""
+      - c-btn--lg
+      - c-btn--sm
+  - name: Other
+    set:
+      - ""
+      - c-btn--full-width
+---
+<a href="#" class="c-btn">
+  Click Me
+
+  <span class="c-btn__icon">
+    <svg class="c-icon c-icon--chevron" focusable="false" aria-hidden="true">
+      <use xlink:href="/svg/symbol/svg/sprite.symbol.svg#icon-chevron"></use>
+    </svg>
+  </span>
+</a>

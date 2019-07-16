@@ -7,9 +7,12 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
   mode: PRODUCTION ? 'production' : 'development',
-  entry: './src/js/index.js',
+  entry: {
+    scripts: './src/js/index.js',
+    'design-system-interface': './src/js/design-system-interface.js',
+  },
   output: {
-    filename: 'scripts.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, './dist/js'),
   },
   module: {
@@ -21,9 +24,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.IgnorePlugin({ resourceRegExp: /jquery$/ }),
-  ],
+  plugins: [new webpack.IgnorePlugin({ resourceRegExp: /jquery$/ })],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({

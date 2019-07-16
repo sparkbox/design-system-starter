@@ -1,0 +1,15 @@
+.c-expandable-content {
+  &__button {
+    position: relative;
+
+    z-index: $z-index-expandable-content-button;
+  }
+
+  &__content {
+    animation: show-hidden-content 1000ms $ease-out-expo;
+
+    &[aria-hidden="true"] {
+      display: none;
+    }
+  }
+}

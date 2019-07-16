@@ -1,0 +1,11 @@
+.c-list {
+  @include default-ol-ul;
+
+  &--ordered {
+    @include default-ol;
+  }
+
+  &--unordered {
+    @include default-ul;
+  }
+}

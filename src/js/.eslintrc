@@ -1,0 +1,38 @@
+{
+  "extends": ["sparkbox"],
+  "rules": {
+    "comma-dangle": ["error", {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+    }]
+  },
+  "globals": {
+    "navigationDocument": "readonly",
+    "App": "readonly",
+    "Device": "readonly",
+    "Player": "readonly",
+    "MediaItem": "readonly",
+    "Playlist": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["spec-helpers/**", "*-spec.js"],
+      "globals": {
+        "describe": "readonly",
+        "it": "readonly",
+        "xit": "readonly",
+        "expect": "readonly",
+        "beforeEach": "readonly",
+        "afterEach": "readonly"
+      },
+      "rules": {
+        "no-unused-expressions": "off",
+        "no-underscore-dangle": [2, { "allow": ["__Rewire__", "__ResetDependency__"] }],
+        "import/named": "off"
+      }
+    }
+  ]
+}

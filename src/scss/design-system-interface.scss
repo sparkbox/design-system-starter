@@ -1,0 +1,42 @@
+.drizzle-variant-set {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  grid-gap: 1rem;
+
+  background: #ededed;
+  padding: 1rem;
+
+  &__group {
+    border: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__legend {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.drizzle-variant-button {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none; // Just in case we missed anything.
+
+  display: block;
+  background: #ededed;
+  color: #4c4c4c;
+  padding: 0em 0.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.7em;
+}

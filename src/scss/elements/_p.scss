@@ -1,0 +1,3 @@
+p:not([class]) {
+  @include default-paragraph;
+}

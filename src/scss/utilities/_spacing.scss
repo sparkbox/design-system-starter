@@ -1,0 +1,62 @@
+$side: (
+  bottom,
+  top,
+  left,
+  right
+);
+
+.u-margin {
+  // This outputs regular spacing classes
+  @each $side in $side {
+    &-#{$side} {
+      @each $spacer-key, $spacer-value in $spacers {
+        &-#{$spacer-key} {
+          margin-#{$side}: space($spacer-key);
+        }
+      }
+    }
+  }
+
+  // This outputs responsive spacing classes
+  @each $bp-key, $bp-value in $grid-breakpoints {
+    @each $side in $side {
+      &-#{$side} {
+        @each $spacer-key, $spacer-value in $spacers {
+          @media (min-width: #{$bp-value}) {
+            &-#{$spacer-key}\@#{$bp-key} {
+              margin-#{$side}: space($spacer-key);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.u-padding {
+  // This outputs regular spacing classes
+  @each $side in $side {
+    &-#{$side} {
+      @each $spacer-key, $spacer-value in $spacers {
+        &-#{$spacer-key} {
+          padding-#{$side}: space($spacer-key);
+        }
+      }
+    }
+  }
+
+  // This outputs responsive spacing classes
+  @each $bp-key, $bp-value in $grid-breakpoints {
+    @each $side in $side {
+      &-#{$side} {
+        @each $spacer-key, $spacer-value in $spacers {
+          @media (min-width: #{$bp-value}) {
+            &-#{$spacer-key}\@#{$bp-key} {
+              padding-#{$side}: space($spacer-key);
+            }
+          }
+        }
+      }
+    }
+  }
+}

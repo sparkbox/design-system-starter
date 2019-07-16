@@ -1,0 +1,2 @@
+notes: |
+  These components apply default styling to elements. This is useful in cases where applying a class to an element removes its default styling.

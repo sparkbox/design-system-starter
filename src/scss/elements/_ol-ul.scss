@@ -1,0 +1,12 @@
+ol:not([class]),
+ul:not([class]) {
+  @include default-ol-ul;
+}
+
+ol:not([class]) {
+  @include default-ol;
+}
+
+ul:not([class]) {
+  @include default-ul;
+}

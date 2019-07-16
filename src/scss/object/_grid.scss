@@ -1,0 +1,79 @@
+$grid-count: 12;
+
+@mixin column-span($span) {
+  float: left;
+  width: ($span / $grid-count) * 100%;
+
+  @supports (display: grid) {
+    width: auto;
+    grid-column: span $span;
+  }
+}
+
+// stylelint-disable
+// This is our grid maker, it defines classes for each breakdown
+// of the grid and gives human readable versions when it can.
+@mixin grid-maker($bp:'') {
+  @for $i from 1 through $grid-count {
+    $val: '';
+
+    @if $i == ceil($grid-count * 0.25) {
+      $val: ".o-grid__quarter#{$bp},";
+    }
+
+    @else if $i == ceil($grid-count * 0.3333) {
+      $val: ".o-grid__third#{$bp},";
+    }
+
+    @else if $i == ceil($grid-count * 0.5) {
+      $val: ".o-grid__half#{$bp},";
+    }
+
+    @else if $i == ceil($grid-count * 0.6666) {
+      $val: ".o-grid__two-third#{$bp}, .o-grid__two-thirds#{$bp},";
+    }
+
+    @else if $i == ceil($grid-count * 0.75) {
+      $val: ".o-grid__three-quarter#{$bp}, .o-grid__three-quarters#{$bp},";
+    }
+
+    @else if $i == $grid-count {
+      $val: ".o-grid__full#{$bp},";
+    }
+
+    @else {
+      $val: $val;
+    }
+
+    #{$val}
+    .o-grid__#{$i}-#{$grid-count}#{$bp} {
+      @include column-span($i);
+    }
+  }
+}
+// stylelint-enable
+
+.o-grid {
+  @include clearfix;
+  display: flex;
+  flex-wrap: wrap;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    // Removes `clearfix` psuedo element from the grid
+    &::after {
+      content: none;
+      display: none;
+    }
+  }
+
+  @include grid-maker;
+
+  @each $key, $val in $grid-breakpoints {
+    @media (min-width: #{$val}) {
+      @include grid-maker(\@#{$key});
+    }
+  }
+}

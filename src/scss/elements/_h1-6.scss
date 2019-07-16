@@ -1,0 +1,23 @@
+h1:not([class]) {
+  @include h1;
+}
+
+h2:not([class]) {
+  @include h2;
+}
+
+h3:not([class]) {
+  @include h3;
+}
+
+h4:not([class]) {
+  @include h4;
+}
+
+h5:not([class]) {
+  @include h5;
+}
+
+h6:not([class]) {
+  @include h6;
+}

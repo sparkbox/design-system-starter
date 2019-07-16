@@ -1,0 +1,3 @@
+a[href]:not([class]) {
+  @include default-link;
+}

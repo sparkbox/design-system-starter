@@ -1,0 +1,11 @@
+// This provides broad, consistent focus styles for elements by default. More
+// specific focus styles can be added to elements on a lower level.
+*:focus {
+  @include focus-styles;
+}
+
+// Since firefox handles focus styles a little bit weirdly on
+// buttons, we need to reapply them with a little more specificity
+button:-moz-focusring {
+  @include focus-styles;
+}

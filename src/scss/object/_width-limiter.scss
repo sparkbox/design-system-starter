@@ -1,0 +1,15 @@
+.o-width-limiter {
+  padding: 0 $page-margin;
+
+  max-width: $max-page-width;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  // Contain padding within max width
+  box-sizing: border-box;
+
+  &--no-page-margin {
+    padding: 0;
+  }
+}

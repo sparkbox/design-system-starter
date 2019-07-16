@@ -1,0 +1,9 @@
+body {
+  font-family: $font-stack-primary;
+  line-height: $line-height-normal;
+
+  color: $c-soft-black;
+
+  // This forces a scrollbar
+  min-height: 100.1vh;
+}

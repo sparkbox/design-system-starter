@@ -1,0 +1,216 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin unbuttonize {
+  // This removes styles added by default to button elements.
+  // For when something should semantically be a button,
+  // but isn't buttony in appearance.
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none; // Just in case we missed anything.
+}
+
+// Auto-generates media queries for looping content
+@mixin loop-mq {
+  @content;
+  @each $key, $val in $grid-breakpoints {
+    @media (min-width: #{$val}) {
+      &\@#{$key} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin default-paragraph {
+  margin: 0 0 space(lg);
+
+  &:only-child,
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin default-link {
+  // For browsers that don't support custom properties,
+  // we define some base styles that work on most background colors.
+  color: inherit;
+  border-bottom: 2px solid;
+  border-color: lighten($c-nasty-blue, 10%);
+  text-decoration: none;
+
+  @supports (color: var(--link-color)) {
+    color: var(--link-color);
+    border-color: var(--link-color);
+
+    transition: background-position $ease-out-expo 150ms;
+
+    background-size: 100% 200%;
+    background-position-y: -100%;
+    background-image: linear-gradient(to top, transparent 50%, var(--link-color) 50%);
+    background-repeat: no-repeat;
+
+    &:focus,
+    &:hover {
+    }
+  }
+}
+
+@mixin default-ol-ul {
+  margin: 0;
+  padding: 0 0 0 1.1rem;
+
+  list-style-type: none;
+
+  counter-reset: generic-ol-counter;
+
+  > li {
+    position: relative;
+
+    &:not(:last-child) {
+      padding-bottom: space(xs);
+    }
+  }
+}
+
+@mixin default-ol {
+  > li {
+    &::before {
+      counter-increment: generic-ol-counter;
+      content: counter(generic-ol-counter) ". ";
+
+      position: absolute;
+      right: 100%;
+      margin-right: 0.4rem;
+
+      font-size: 0.875rem;
+      font-weight: bold;
+
+      // Try to align these baselines with text baselines
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+@mixin default-ul {
+  > li {
+    &::before {
+      content: '';
+      background-color: $c-soft-black;
+
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+
+      border-radius: 50%;
+
+      margin-left: -1rem;
+      margin-right: 0.5rem;
+
+      position: relative;
+      top: -0.1rem;
+    }
+  }
+}
+
+@mixin h1 {
+  color: inherit;
+  color: var(--heading-color);
+
+  font-size: 2.125em;
+  font-weight: bold;
+
+  margin: 0 0 space(lg);
+}
+
+@mixin h2 {
+  color: inherit;
+  color: var(--heading-color);
+
+  font-size: 1.625em;
+  font-weight: bold;
+
+  margin: 0 0 space(lg);
+}
+
+@mixin h3 {
+  color: inherit;
+  color: var(--heading-color);
+
+  font-size: 1.375em;
+  font-weight: bold;
+
+  margin: 0 0 space(md);
+}
+
+@mixin h4 {
+  color: inherit;
+  color: var(--heading-color);
+
+  font-size: 1.125em;
+  font-weight: bold;
+
+  margin: 0 0 space(md);
+}
+
+@mixin h5 {
+  color: inherit;
+  color: var(--heading-color);
+
+  font-size: 1em;
+  font-weight: bold;
+
+  margin: 0 0 space(md);
+}
+
+@mixin h6 {
+  font-size: 1em;
+  font-weight: normal;
+
+  margin: 0 0 space(md);
+}
+
+@mixin visually-hidden($status:null) {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); // IE6, IE7
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+
+  @if $status == 'disable' {
+    position: static !important;
+    clip: auto !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible;
+  }
+}
+
+@mixin focus-styles {
+  // Disable native outline since we're drawing our own via box-shadow
+  outline: none;
+
+  html.safe-focus & {
+    // This draws a doubled-up border, which is white and navy. This is to ensure
+    // it's visible on all backgrounds. It's marked as !important so this focus
+    // state takes effect even when used on elements with higher-specificity
+    // box-shadows applied to them. And because focus states are important. :)
+    box-shadow:
+      0 0 0 2px $c-nasty-blue,
+      0 0 0 4px white !important;
+  }
+}

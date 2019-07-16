@@ -1,0 +1,88 @@
+.c-btn {
+  // Reset default <button> styles
+  @include unbuttonize;
+
+  // Reset default <a> styles
+  text-decoration: none;
+
+  display: inline-block;
+
+  padding: 1em;
+
+  line-height: $line-height-tight;
+
+  transition: all 0.25s $ease-out-expo;
+
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+  }
+
+  &:active {
+  }
+
+  &__icon {
+    margin-left: 0.5em;
+
+    &--flip-when-expanded {
+      display: inline-block;
+    }
+
+    [aria-expanded="true"] > &--flip-when-expanded {
+      transform: rotate(180deg) !important;
+    }
+  }
+
+  &--sm {
+    font-size: 0.9rem;
+    padding: 0.25rem;
+  }
+
+  &--lg {
+    font-size: 1.5rem;
+  }
+
+  &--primary {
+    color: white;
+    background-color: $c-nasty-blue;
+
+    &:focus,
+    &:hover {
+      background-color: lighten($c-nasty-blue, 10%);
+    }
+  }
+
+  &--secondary {
+    color: black;
+    background-color: $c-painful-green;
+
+    &:focus,
+    &:hover {
+      background-color: lighten($c-painful-green, 10%);
+    }
+  }
+
+  &--tertiary {
+    color: white;
+
+    // Darkening for contrast for a11y
+    background-color: darken($c-terrible-red, 10%);
+
+    &:focus,
+    &:hover {
+      background-color: darken($c-terrible-red, 5%);
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+
+    // This adds space between a
+    // btn's text, and its icon.
+    // When no icon is present, this
+    // has no visual effect.
+    display: inline-flex;
+    justify-content: space-between;
+  }
+}

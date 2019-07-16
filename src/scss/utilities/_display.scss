@@ -1,0 +1,23 @@
+.u-display-none {
+  @include loop-mq {
+    display: none;
+  }
+}
+
+.u-display-block {
+  @include loop-mq {
+    display: block;
+  }
+}
+
+.u-display-inline {
+  display: inline;
+}
+
+.u-display-inline-block {
+  display: inline-block;
+}
+
+.u-display-visually-hidden {
+  @include visually-hidden();
+}

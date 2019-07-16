@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- this is the default layout for the drizzle interface -->
+<html class="drizzle-Layout no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{title}}{{name}}</title>
+
+    {{> patterns.drizzle.partials.stylesheet-link-tags}}
+  </head>
+  <body class="drizzle-Layout-body">
+    {{> patterns.drizzle.partials.sidebar}}
+
+    <main id="mainContent" class="drizzle-Layout-main drizzle-u-cf">
+      <div class="drizzle-u-pad drizzle-u-rhythm">
+        {{#block "body"}}
+          {{#block "main"}}
+
+          {{/block}}
+        {{/block}}
+      </div>
+    </main>
+
+    {{> patterns.drizzle.partials.script-tags}}
+  </body>
+</html>
