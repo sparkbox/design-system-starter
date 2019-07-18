@@ -1,25 +1,7 @@
-.drizzle-variant-set {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  grid-gap: 1rem;
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900,900i|Roboto:300,700|Roboto+Mono&display=swap');
 
-  background: #ededed;
-  padding: 1rem;
-
-  &__group {
-    border: 0;
-    padding: 0;
-
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__legend {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-}
+$c-base: #56485B;
+$c-pale: #F5F1F6;
 
 .drizzle-variant-button {
   border: none;
@@ -36,4 +18,299 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.7em;
+}
+
+.drizzle-nav {
+  background: $c-base;
+  color: $c-pale;
+  -webkit-font-smoothing: antialiased;
+
+  &__header {
+    padding: 0.7rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    padding: 0.7rem 0 1.4rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    grid-gap: 1.3rem;
+    justify-content: space-around;
+
+    @media (min-width: 960px) {
+      display: block !important;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      border: none;
+    }
+
+    @media (min-width: 960px) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__toggle {
+    border: none;
+    margin: 0;
+    text-align: inherit;
+    font: inherit;
+    border-radius: 0;
+    appearance: none; // Just in case we missed anything.
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(black, 0.4);
+    padding: 0.5rem 1rem;
+
+    &[aria-expanded="true"] {
+      background-color: rgba(black, 0.8);
+    }
+
+    @media (min-width: 960px) {
+      display: none;
+    }
+  }
+
+  &__collection-title {
+    margin: 0.2rem 0;
+    padding: 0 0.7rem;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__collection-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: 960px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+
+    color: $c-pale !important;
+
+    display: block;
+
+    padding: 0.4rem 0.7rem;
+
+    transition: all 0.1s ease-out;
+
+    &:focus,
+    &:hover {
+      background-color: mix($c-base, $c-pale, 90%) !important;
+    }
+  }
+}
+
+
+.drizzle-heading-1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0 0 1em;
+
+  -webkit-font-smooothing: antialiased;
+}
+
+.drizzle-heading-2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+
+  -webkit-font-smooothing: antialiased;
+}
+
+.drizzle-collection-heading {
+  line-height: 1;
+  color: $c-base;
+
+  &__sub {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 16px;
+    display: block;
+  }
+
+  &__text {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+
+    @media (min-width: 30em) {
+      font-size: 48px;
+    }
+  }
+}
+
+.drizzle-p {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: $c-base;
+}
+
+.drizzle-Layout-main {
+  background: $c-pale;
+}
+
+.drizzle-white-bg {
+  background: white;
+}
+
+
+.drizzle-pattern {
+  background: white;
+
+  padding: 12px;
+
+  @media (min-width: 30em) {
+    padding: 48px;
+  }
+
+  margin: 5rem 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+
+    color: $c-base;
+
+    margin: 0;
+
+    @media (min-width: 30em) {
+      font-size: 32px;
+    }
+  }
+
+  &__info {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: $c-base;
+
+    margin-top: 1em;
+  }
+
+  &__variant-button {
+    flex-shrink: 0;
+
+    border: none;
+
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+
+    background: $c-base;
+    color: $c-pale;
+    padding: 0.3rem 0.4rem;
+  }
+
+  &__variant-box {
+    background: $c-base;
+    color: $c-pale;
+    font-family: 'Roboto', sans-serif;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 13rem));
+    grid-gap: 1rem;
+
+    padding: 1rem;
+
+    code {
+      font-family: 'Roboto Mono', sans-serif !important;
+    }
+
+    input {
+      margin-right: 0.3rem;
+    }
+  }
+
+  &__variant-group {
+    border: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__variant-legend {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__demo-box-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: rgba($c-base, 0.7);
+    margin: 0;
+  }
+
+  &__demo-box {
+    border: 3px solid $c-pale;
+    background: white;
+
+    padding: 24px;
+
+    margin: 0 0 1rem;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &--code {
+      // This override's prism's default styles
+      background: white !important;
+    }
+  }
+
+  &__source {
+    // This override's prism's default styles
+    background: white !important;
+    font-family: 'Roboto Mono', sans-serif !important;
+    font-size: 14px;
+  }
+
+  &__demo-box-button {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.is-active {
+  background-color: mix($c-base, $c-pale, 90%) !important;
+}
+
+.drizzle-grid-example {
+  height: 100px;
+  background: $c-base;
+  box-shadow: inset 0 0 0 2px white;
 }

@@ -2,45 +2,50 @@
 hidden: true
 ---
 {{#*inline "nav-item"}}
-  <a class="drizzle-Nav-item" href="{{@root.baseurl}}/{{url}}">{{label}}</a>
+  <a class="drizzle-nav__link drizzle-Nav-item" href="{{@root.baseurl}}/{{url}}">{{label}}</a>
 {{/inline}}
 
-<div class="drizzle-Layout-nav drizzle-Nav" id="nav">
-  <div class="drizzle-Nav-header">
-    <a href="/" class="drizzle-Nav-title">{{data "global.companyName"}} Design System</a>
+<div class="drizzle-Layout-nav drizzle-nav" id="nav">
+  <div class="drizzle-nav__header">
+    <p class="drizzle-nav__title"><a href="/" class="x">{{data "global.companyName"}} Design System</a></p>
 
-    <a class="drizzle-Nav-header-toggle" href="#nav">
-      <svg viewBox="-1 -1 12 7" width="16" height="16">
-        <title>Menu</title>
-        <polyline fill="none" stroke="currentColor" stroke-width="2" points="0 0 5 5 10 0"/>
-      </svg>
-    </a>
+    <button class="drizzle-nav__toggle c-expandable-content__button js-toggler" id="nav-content">Menu</button>
+
+    <!-- <a href="/" class="drizzle-Nav-title">{{data "global.companyName"}} Design System</a>
+         
+    <!--
+         This is hidden, because it's not used.
+         But it's here, because the JS would throw errors if it wasn't. :(
+    -->
+    <a class="drizzle-Nav-header-toggle" href="#nav" style="display: none;">a</a>
   </div>
 
-  <div class="drizzle-Nav-main" id="nav-menu">
-    <ul class="drizzle-Nav-menu">
-      <li><a href="/" class="drizzle-Nav-item">Overview</a></li>
-    </ul>
+  <div class="drizzle-nav__content c-expandable-content__content" aria-hidden="false" id="nav-menu" aria-labelledby="nav-content">
 
-    <h5 class="drizzle-Nav-item drizzle-u-marginTop">Components</h5>
-    <ul class="drizzle-Nav-menu">
-      {{#each (collections "components" sortby="order")}}
+    <div>
+      <h2 class="drizzle-nav__collection-title">Components</h2>
+      <ul class="drizzle-nav__collection-list drizzle-Nav-menu">
+        {{#each (collections "components" sortby="order")}}
+          <li>
+            {{> nav-item label=name}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    
+    <div>
+      <h2 class="drizzle-nav__collection-title">Documentation</h2>
+      <ul class="drizzle-nav__collection-list drizzle-Nav-menu">
+        {{#each (pages "documentation" sortby="order")}}
+          <li>
+            {{> nav-item label=data.title}}
+          </li>
+        {{/each}}
         <li>
-          {{> nav-item label=name}}
+          {{> nav-item label="SVG Sprite" url="/svg/symbol/sprite.symbol.html"}}
         </li>
-      {{/each}}
-    </ul>
-
-    <h5 class="drizzle-Nav-item drizzle-u-marginTop">Documentation</h5>
-    <ul class="drizzle-Nav-menu">
-      {{#each (pages "documentation" sortby="order")}}
-        <li>
-          {{> nav-item label=data.title}}
-        </li>
-      {{/each}}
-      <li>
-        {{> nav-item label="SVG Sprite" url="/svg/symbol/sprite.symbol.html"}}
-      </li>
-    </ul>
+      </ul>
+    </div>
+    
   </div>
 </div>

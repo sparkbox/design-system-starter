@@ -1,11 +1,11 @@
-const variantSets = [...document.querySelectorAll('.drizzle-variant-set')];
+const variantsBoxes = [...document.querySelectorAll('.drizzle-pattern__variant-box')];
 
-const variantsData = variantSets.map((v) => {
-  const root = v.closest('.drizzle-Item');
-  const patternContainer = root.querySelector('.drizzle-pattern');
-  const source = root.querySelector('.drizzle-source');
+const variantsData = variantsBoxes.map((v) => {
+  const root = v.closest('.drizzle-pattern');
+  const patternContainer = root.querySelector('.drizzle-pattern__demo-box--view');
+  const source = root.querySelector('.drizzle-pattern__source');
   const originalPattern = patternContainer.children[0].cloneNode(true);
-  const variantGroups = [...v.querySelectorAll('.drizzle-variant-set__group')];
+  const variantGroups = [...v.querySelectorAll('.drizzle-pattern__variant-group')];
 
   return {
     dom: v,
@@ -79,10 +79,10 @@ function onLoad() {
 }
 
 function onChange(e) {
-  const v = getVariantData(e.target.closest('.drizzle-variant-set'));
+  const v = getVariantData(e.target.closest('.drizzle-pattern__variant-box'));
   renderVariant(v);
 }
 
-variantSets.forEach(v => v.addEventListener('change', onChange));
+variantsBoxes.forEach(v => v.addEventListener('change', onChange));
 
 onLoad();

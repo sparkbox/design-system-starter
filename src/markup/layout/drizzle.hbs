@@ -6,14 +6,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{title}} | {{data "global.companyName"}} Design System</title>
+    <title>{{title}}{{name}} | {{data "global.companyName"}} Design System</title>
 
     {{> patterns.drizzle.partials.stylesheet-link-tags}}
   </head>
   <body class="drizzle-Layout-body">
     {{> patterns.drizzle.partials.sidebar}}
 
-    <main id="mainContent" class="drizzle-Layout-main drizzle-u-cf">
+    <main id="mainContent" class="drizzle-Layout-main drizzle-u-cf {{main-class}}">
       <div class="drizzle-u-pad drizzle-u-rhythm">
         {{#block "body"}}
           {{#block "main"}}

@@ -3,52 +3,50 @@
 # the pattern builder script fails
 hidden: true
 ---
-<div class="drizzle-Item drizzle-u-rhythm">
-  {{!-- Header, labels --}}
-  <div class="drizzle-u-marginEnds">
-    {{#> drizzle.labelheader tag="h2" id="(toSlug name)-pattern" labels=data.labels}}
-      <h2 class="" id="{{toSlug name}}">
-        <a href="#{{toSlug name}}">
-          {{name}}
-        </a>
+<div class="drizzle-pattern">
+  {{#> drizzle.labelheader tag="h2" id="(toSlug name)-pattern" labels=data.labels}}
+    <div class="drizzle-pattern__header">
+      <h2 class="drizzle-pattern__title" id="{{toSlug name}}">
+        {{name}}
       </h2>
-    {{/drizzle.labelheader}}
-  </div>
+
+      {{#if data.variantGroups}}
+        <button class="js-toggler drizzle-pattern__variant-button" aria-expanded="false" id="{{toSlug name}}-variants-toggle">
+          Variants
+          <span class="c-btn__icon c-btn__icon--flip-when-expanded">
+            <svg class="c-icon c-icon--chevron" focusable="false" aria-hidden="true">
+              <use xlink:href="/svg/symbol/svg/sprite.symbol.svg#icon-chevron"></use>
+            </svg>
+          </span>
+        </button>
+      {{/if}}
+    </div>
+  {{/drizzle.labelheader}}
+
 
   {{#if data.variantGroups}}
-    <div class="c-expandable-content">
-      
-      <button class="js-toggler c-expandable-content__button drizzle-variant-button" aria-expanded="false" id="{{toSlug name}}-variants-toggle">
-        Variants
-        <span class="c-btn__icon c-btn__icon--flip-when-expanded">
-          <svg class="c-icon c-icon--chevron" focusable="false" aria-hidden="true">
-            <use xlink:href="/svg/symbol/svg/sprite.symbol.svg#icon-chevron"></use>
-          </svg>
-        </span>
-      </button>
-      <div class="drizzle-variant-set c-expandable-content__content u-padding-top-lg" aria-labelledby="{{toSlug name}}-variants-toggle" aria-hidden="false">
-        {{#each data.variantGroups}}
-          <fieldset class="drizzle-variant-set__group">
-            <legend class="drizzle-variant-set__legend">{{this.name}}</legend>
-            {{#each this.set}}
-              <label>
-                <input type="radio" name="variant-{{toSlug ../../name}}-{{toSlug ../name}}" value="{{this}}">
-                {{#is this ""}}
-                  <em>none</em>
-                {{else}}
-                  <code>{{this}}</code>
-                {{/is}}
-              </label>
-            {{/each}}
-          </fieldset>
-        {{/each}}
-      </div>
+    <div class="drizzle-pattern__variant-box c-expandable-content__content u-padding-top-lg" aria-labelledby="{{toSlug name}}-variants-toggle" aria-hidden="false">
+      {{#each data.variantGroups}}
+        <fieldset class="drizzle-pattern__variant-group">
+          <legend class="drizzle-pattern__variant-legend">{{this.name}}</legend>
+          {{#each this.set}}
+            <label>
+              <input type="radio" name="variant-{{toSlug ../../name}}-{{toSlug ../name}}" value="{{this}}">
+              {{#is this ""}}
+                <em>none</em>
+          {{else}}
+                <code>{{this}}</code>
+              {{/is}}
+            </label>
+          {{/each}}
+        </fieldset>
+      {{/each}}
     </div>
   {{/if}}
 
   {{!-- Notes --}}
   {{#if data.notes}}
-    <div class="drizzle-Item-notes drizzle-u-rhythm">
+    <div class="drizzle-Item-notes drizzle-u-rhythm drizzle-pattern__info">
       {{{data.notes}}}
     </div>
   {{/if}}
@@ -115,13 +113,15 @@ hidden: true
     </div>
   {{/if}}
   {{!-- Preview --}}
-  <div class="drizzle-u-border">
-    <div class="drizzle-pattern drizzle-u-pad drizzle-u-cf drizzle-u-posRelative {{data.previewClass}}">
+  <div class="u-margin-top-lg">
+    <h3 class="drizzle-pattern__demo-box-title">View</h3>
+    <div class="drizzle-pattern__demo-box drizzle-pattern__demo-box--view {{data.previewClass}}">
       {{{pattern id @root}}}
     </div>
     {{!-- Code sample --}}
     {{#unless data.sourceless}}
-      <pre class="drizzle-u-borderTop drizzle-u-pad"><code class="drizzle-source language-markup">{{{patternSource id @root}}}</code></pre>
+      <h3 class="drizzle-pattern__demo-box-title">HTML</h3>
+      <pre class="drizzle-pattern__demo-box drizzle-pattern__demo-box--code"><code class="drizzle-pattern__source language-markup">{{{patternSource id @root}}}</code></pre>
     {{/unless}}
   </div>
 </div>
