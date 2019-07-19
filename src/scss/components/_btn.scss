@@ -27,6 +27,10 @@
 
     &--flip-when-expanded {
       display: inline-block;
+
+      .no-js & {
+        display: none;
+      }
     }
 
     [aria-expanded="true"] > &--flip-when-expanded {
