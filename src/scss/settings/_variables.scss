@@ -4,25 +4,6 @@
 $font-stack-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 //
-// COLORS
-//
-$c-terrible-red: #ff0000;
-$c-painful-green: #00ff00;
-$c-nasty-blue: #0000ff;
-$c-soft-black: #333;
-
-// This is the lightest value that still has
-// a >4.5 contrast ratio against white.
-// Can be used for text of any size.
-$c-lightest-gray: #767676;
-
-// This is the lightest value that still has
-// a >3.0 contrast ratio against white.
-// Can be used for text that is "large text".
-// Large text is >=24px, or >=18.67px if it's bold
-$c-lightest-gray-large-text: #949494;
-
-//
 // BREAKPOINTS
 //
 $bp-sm: 30rem;

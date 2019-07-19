@@ -49,21 +49,21 @@
 
   &--primary {
     color: white;
-    background-color: $c-nasty-blue;
+    background-color: $c-btn-primary;
 
     &:focus,
     &:hover {
-      background-color: lighten($c-nasty-blue, 10%);
+      background-color: lighten($c-btn-primary, 10%);
     }
   }
 
   &--secondary {
     color: black;
-    background-color: $c-painful-green;
+    background-color: $c-btn-secondary;
 
     &:focus,
     &:hover {
-      background-color: lighten($c-painful-green, 10%);
+      background-color: lighten($c-btn-secondary, 10%);
     }
   }
 
@@ -71,11 +71,11 @@
     color: white;
 
     // Darkening for contrast for a11y
-    background-color: darken($c-terrible-red, 10%);
+    background-color: darken($c-btn-tertiary, 10%);
 
     &:focus,
     &:hover {
-      background-color: darken($c-terrible-red, 5%);
+      background-color: darken($c-btn-tertiary, 5%);
     }
   }
 

@@ -47,7 +47,7 @@
   // we define some base styles that work on most background colors.
   color: inherit;
   border-bottom: 2px solid;
-  border-color: lighten($c-nasty-blue, 10%);
+  border-color: lighten($c-default-link, 10%);
   text-decoration: none;
 
   @supports (color: var(--link-color)) {
@@ -210,7 +210,7 @@
     // state takes effect even when used on elements with higher-specificity
     // box-shadows applied to them. And because focus states are important. :)
     box-shadow:
-      0 0 0 2px $c-nasty-blue,
+      0 0 0 2px $c-safe-focus,
       0 0 0 4px white !important;
   }
 }
