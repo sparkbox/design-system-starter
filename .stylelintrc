@@ -4,6 +4,8 @@
     "stylelint-scss"
   ],
   "rules": {
-
+    "max-nesting-depth": [4, {
+      "ignore": ["blockless-at-rules"]
+    }],
   }
 }

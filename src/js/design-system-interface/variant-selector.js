@@ -1,9 +1,9 @@
-const variantsBoxes = [...document.querySelectorAll('.drizzle-variant-set')]
+const variantSets = [...document.querySelectorAll('.drizzle-variant-set')];
 
-const variantsData = variantsBoxes.map((v) => {
-  const root = v.closest('.drizzle-Item')
-  const patternContainer = root.querySelector('.drizzle-pattern')
-  const source = root.querySelector('.drizzle-source')
+const variantsData = variantSets.map((v) => {
+  const root = v.closest('.drizzle-Item');
+  const patternContainer = root.querySelector('.drizzle-pattern');
+  const source = root.querySelector('.drizzle-source');
   const originalPattern = patternContainer.children[0].cloneNode(true);
   const variantGroups = [...v.querySelectorAll('.drizzle-variant-set__group')];
 
@@ -20,7 +20,8 @@ const variantsData = variantsBoxes.map((v) => {
 function checkFirstInputInEachSet() {
   variantsData.forEach((vb) => {
     vb.variantGroups.forEach((vs) => {
-      vs.querySelector('input').checked = true;
+      const variantSet = vs;
+      variantSet.querySelector('input').checked = true;
     });
   });
 }
@@ -41,19 +42,11 @@ function escapeHtml(str) {
 }
 
 function setSource(v, newHtml) {
-  v.source.innerHTML = escapeHtml(newHtml);
-  if (Prism) {
-    Prism.highlightElement(v.source);
+  const variant = v;
+  variant.source.innerHTML = escapeHtml(newHtml);
+  if (window.Prism) {
+    window.Prism.highlightElement(variant.source);
   }
-}
-
-function renderVariant(v) {
-  refreshPattern(v);
-  const selections = getSelectedVariants(v);
-  const pattern = v.patternContainer.children[0];
-  pattern.classList.add(...selections);
-  const newHtml = v.patternContainer.innerHTML.trim();
-  setSource(v, newHtml);
 }
 
 function getSelectedVariants(v) {
@@ -66,7 +59,16 @@ function getSelectedVariants(v) {
     }
   });
 
-  return selections
+  return selections;
+}
+
+function renderVariant(v) {
+  refreshPattern(v);
+  const selections = getSelectedVariants(v);
+  const pattern = v.patternContainer.children[0];
+  pattern.classList.add(...selections);
+  const newHtml = v.patternContainer.innerHTML.trim();
+  setSource(v, newHtml);
 }
 
 function onLoad() {
@@ -81,6 +83,6 @@ function onChange(e) {
   renderVariant(v);
 }
 
-variantsBoxes.forEach((v) => v.addEventListener('change', onChange));
+variantSets.forEach(v => v.addEventListener('change', onChange));
 
 onLoad();

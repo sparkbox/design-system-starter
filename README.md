@@ -1,7 +1,7 @@
 **First-time setup instructions:**
 
 - [**Click this link and make a new repo.**](https://github.com/sparkbox/designsystemstarter/generate) This will start a repo using [GitHub's repository templates](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/), which copies all the files from this one to the new repo.
-- **Add your company's name.** You'll need to change it in:
+- **Add your company's name.** You'll need to change it from `YOURNAMEHERE` in:
   - [package.json](package.json)
   - [src/data/global.yaml](src/data/global.yaml)
   - [README.md](README.md) (That's this file!)
