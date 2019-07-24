@@ -3,9 +3,9 @@ title: Spacing
 layout: drizzle
 ---
 
-<h1>{{title}}</h1>
+<h1 class="drizzle-heading-1">{{title}}</h1>
 
-<p>
+<p class="drizzle-p">
   Spacing classes can be used to stitch together components. This is useful
   because if you build the spacing before and after a component into the
   component itself, it's less likely to be reusable in a different context.
@@ -13,7 +13,7 @@ layout: drizzle
 
 {{#with (data 'spacing')}}
 
-<h2 class="c-heading-2 u-margin-top-xxl">Margin</h2>
+<h2 class="drizzle-heading-2 u-margin-top-xxl">Margin</h2>
 
 <table>
   <thead>
@@ -36,7 +36,7 @@ layout: drizzle
   </tbody>
 </table>
 
-<h2 class="c-heading-2 u-margin-top-xxl">Padding</h2>
+<h2 class="drizzle-heading-2 u-margin-top-xxl">Padding</h2>
 <table>
   <thead>
     <tr>
@@ -60,8 +60,8 @@ layout: drizzle
 {{/with}}
 
 
-<h2 class="c-heading-2 u-margin-top-xxl">Responsive Spacing</h2>
-<p>To adjust margin and padding at different breakpoints you can add <code class="language-css">@sm</code>, <code class="language-css">@md</code>, <code class="language-css">@lg</code>, <code class="language-css">@xl</code> after any of the spacing classes:</p>
+<h2 class="drizzle-heading-2 u-margin-top-xxl">Responsive Spacing</h2>
+<p class="drizzle-p">To adjust margin and padding at different breakpoints you can add <code class="language-css">@sm</code>, <code class="language-css">@md</code>, <code class="language-css">@lg</code>, <code class="language-css">@xl</code> after any of the spacing classes:</p>
 
 <div>
   <div class="u-margin-bottom-sm u-margin-bottom-md@md u-margin-bottom-lg@lg" style="width: 100%; height: 100px; background: #0065A0;"></div>
