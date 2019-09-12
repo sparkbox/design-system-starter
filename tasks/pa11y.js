@@ -5,6 +5,10 @@ const glob = require('glob');
 async function runPa11y(file) {
   try {
     const results = await pa11y(`${file}`, {
+      chromeLaunchConfig: {
+        args: ["--no-sandbox"],
+        ignoreHTTPSErrors: false
+      },
       allowedStandards: [
         'WCAG2.1AA',
       ],
