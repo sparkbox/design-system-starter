@@ -1,4 +1,4 @@
-# [Jira Card #__](https://sparkbox.atlassian.net/browse/CSC-)
+**Jira Card:** 
 
 ## ✍️ Description
 
