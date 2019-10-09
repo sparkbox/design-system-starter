@@ -5,6 +5,7 @@
   - [package.json](package.json)
   - [src/data/global.yaml](src/data/global.yaml)
   - [README.md](README.md) (That's this file!)
+- **Consider changing the license** The Design System Starter is licensed with a CC Attribution-ShareAlike license. You should consider changing [the license file](LICENSE) if this doesn't fit the project you're starting with it.
 - **Start styling.** You can:
   - **Build a color palette** in [src/scss/settings/_variables.scss](src/scss/settings/_variables.scss)
   - **Adjust typography and default `<a>` styles** in [src/scss/tools/_mixins.scss](src/scss/tools/_mixins.scss)

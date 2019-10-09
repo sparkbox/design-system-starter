@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "repository": "git@github.com:sparkbox/YOURNAMEHERE-design-system.git",
   "author": "Kasey Bonifacio <kasey@heysparkbox.com>",
-  "license": "MIT",
+  "license": "cc-by-sa-4.0",
   "scripts": {
     "prestart": "run-p clean node-version",
     "start": "node tasks/start.js",
