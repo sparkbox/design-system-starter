@@ -27,6 +27,14 @@
     "node": "^10.13.0",
     "npm": "^6.4.1"
   },
+  "browserslist": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 68",
+    "IE >= 11",
+    "Safari >= 11",
+    "Edge >= 16"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
     "autoprefixer": "^9.4.2",
