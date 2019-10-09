@@ -220,7 +220,9 @@ $c-pale: #F5F1F6;
     margin-top: 1em;
   }
 
-  &__variant-button {
+  &__variant-button,
+  &__copy-button {
+    position: relative;
     flex-shrink: 0;
 
     border: none;
@@ -232,6 +234,26 @@ $c-pale: #F5F1F6;
     background: $c-base;
     color: $c-pale;
     padding: 0.3rem 0.4rem;
+  }
+
+  &__copy-button::after {
+    content: '👍';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #56485B;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &__copy-button--success::after {
+    opacity: 1;
+    transition: none;
   }
 
   &__variant-box {
