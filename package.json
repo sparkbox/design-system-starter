@@ -7,6 +7,8 @@
   "scripts": {
     "prestart": "run-p clean node-version",
     "start": "node tasks/start.js",
+    "build": "run-p copy sass js svg-sprite",
+    "build:dev": "run-p copy sass:dev js:dev svg-sprite",
     "lint": "run-p pa11y stylelint eslint",
     "clean": "rimraf dist/",
     "copy": "node tasks/copy.js",
@@ -15,8 +17,11 @@
     "patterns": "node tasks/patterns.js",
     "svg-sprite": "node tasks/svg-sprite.js",
     "sass": "node-sass src/scss/ -o dist/css/ --output-style compressed",
+    "sass:dev": "node-sass src/scss/ -o dist/css/ --output-style",
     "postsass": "postcss dist/css/*.css -u autoprefixer --no-map -d dist/css",
-    "js": "NODE_ENV=production webpack -p",
+    "postsass:dev": "npm run postsass",
+    "js": "webpack -p --progress --config=webpack.prod.js --mode production",
+    "js:dev": "webpack -p --progress --config=webpack.dev.js --mode development",
     "pa11y": "node tasks/pa11y.js",
     "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
     "eslint": "eslint src/js",
@@ -43,7 +48,8 @@
     "express": "^4.15.2",
     "express-basic-auth": "^1.2.0",
     "lodash": "^4.17.5",
-    "prism-themes": "^1.1.0"
+    "prism-themes": "^1.1.0",
+    "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

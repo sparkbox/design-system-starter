@@ -1,17 +1,10 @@
 const shell = require('shelljs');
-const map = require('lodash/map');
 const runAll = require('npm-run-all');
 
 console.log(`Starting Pattern Library for ${process.env.NODE_ENV || 'development'}`);
 
-const tasks = {
-  development: ['copy', 'sass', 'js', 'svg-sprite', 'patterns', 'server', 'watch'],
-};
-
-function parallelTasks(env) {
-  const list = map(tasks[env], task => `${task}`);
-
-  return `${list.join(' ')}`;
+if (process.env.NODE_ENV === 'production') {
+  shell.exec('npm-run-all -s patterns -p build server');
+} else {
+  shell.exec('npm-run-all -s patterns -p build:dev server watch');
 }
-
-shell.exec(`npm-run-all -s patterns -p ${parallelTasks('development')}`);
