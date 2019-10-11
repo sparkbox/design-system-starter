@@ -15,7 +15,7 @@
     - [Common Elements page](http://localhost:3000/demos/common-elements.html)
     - [The "btn" component](http://localhost:3000/patterns/components/buttons.html)
 - **Delete this documentation.** This documentation is for first-time setup. Go into [README.md](README.md) and delete this list of steps.
-    
+
 # YOURNAMEHERE Design System
 
 Setup
@@ -34,7 +34,7 @@ Setup
 Drizzle
 -------
 
-The pattern library is be powered by [Drizzle](https://github.com/cloudfour/drizzle) and will be organized by:
+The pattern library is powered by [Drizzle](https://github.com/cloudfour/drizzle) and will be organized by:
 - [Data](https://github.com/cloudfour/drizzle/tree/master/docs#data)
 - [Pages](https://github.com/cloudfour/drizzle/tree/master/docs#pages)
 - [Patterns](https://github.com/cloudfour/drizzle/tree/master/docs#patterns)
