@@ -1,5 +1,4 @@
 const shell = require('shelljs');
-const runAll = require('npm-run-all');
 
 console.log(`Starting Pattern Library for ${process.env.NODE_ENV || 'development'}`);
 
