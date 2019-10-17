@@ -1,9 +1,12 @@
+html,
+body {
+  // Sets the body to minimally be the height of the window
+  height: 100%;
+}
+
 body {
   font-family: $font-stack-primary;
   line-height: $line-height-normal;
 
   color: $c-soft-black;
-
-  // This forces a scrollbar
-  min-height: 100.1vh;
 }
