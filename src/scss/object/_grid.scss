@@ -18,27 +18,27 @@ $grid-count: 12;
     $val: '';
 
     @if $i == ceil($grid-count * 0.25) {
-      $val: ".o-grid__quarter#{$bp},";
+      $val: ".obj-grid__quarter#{$bp},";
     }
 
     @else if $i == ceil($grid-count * 0.3333) {
-      $val: ".o-grid__third#{$bp},";
+      $val: ".obj-grid__third#{$bp},";
     }
 
     @else if $i == ceil($grid-count * 0.5) {
-      $val: ".o-grid__half#{$bp},";
+      $val: ".obj-grid__half#{$bp},";
     }
 
     @else if $i == ceil($grid-count * 0.6666) {
-      $val: ".o-grid__two-third#{$bp}, .o-grid__two-thirds#{$bp},";
+      $val: ".obj-grid__two-third#{$bp}, .obj-grid__two-thirds#{$bp},";
     }
 
     @else if $i == ceil($grid-count * 0.75) {
-      $val: ".o-grid__three-quarter#{$bp}, .o-grid__three-quarters#{$bp},";
+      $val: ".obj-grid__three-quarter#{$bp}, .obj-grid__three-quarters#{$bp},";
     }
 
     @else if $i == $grid-count {
-      $val: ".o-grid__full#{$bp},";
+      $val: ".obj-grid__full#{$bp},";
     }
 
     @else {
@@ -46,14 +46,14 @@ $grid-count: 12;
     }
 
     #{$val}
-    .o-grid__#{$i}-#{$grid-count}#{$bp} {
+    .obj-grid__#{$i}-#{$grid-count}#{$bp} {
       @include column-span($i);
     }
   }
 }
 // stylelint-enable
 
-.o-grid {
+.obj-grid {
   @include clearfix;
   display: flex;
   flex-wrap: wrap;

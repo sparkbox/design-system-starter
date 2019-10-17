@@ -13,8 +13,8 @@ hidden: true
       {{#if data.variantGroups}}
         <button class="js-toggler drizzle-pattern__variant-button" aria-expanded="false" id="{{toSlug name}}-variants-toggle">
           Variants
-          <span class="c-btn__icon c-btn__icon--flip-when-expanded">
-            <svg class="c-icon c-icon--chevron" focusable="false" aria-hidden="true">
+          <span class="cmp-button__icon cmp-button__icon--flip-when-expanded">
+            <svg class="cmp-icon cmp-icon--chevron" focusable="false" aria-hidden="true">
               <use xlink:href="/svg/symbol/svg/sprite.symbol.svg#icon-chevron"></use>
             </svg>
           </span>
@@ -25,7 +25,7 @@ hidden: true
 
 
   {{#if data.variantGroups}}
-    <div class="drizzle-pattern__variant-box c-expandable-content__content u-padding-top-lg" aria-labelledby="{{toSlug name}}-variants-toggle" aria-hidden="false">
+    <div class="drizzle-pattern__variant-box cmp-expandable-content__content util-padding-top-lg" aria-labelledby="{{toSlug name}}-variants-toggle" aria-hidden="false">
       {{#each data.variantGroups}}
         <fieldset class="drizzle-pattern__variant-group">
           <legend class="drizzle-pattern__variant-legend">{{this.name}}</legend>
@@ -113,7 +113,7 @@ hidden: true
     </div>
   {{/if}}
   {{!-- Preview --}}
-  <div class="u-margin-top-lg">
+  <div class="util-margin-top-lg">
     <h3 class="drizzle-pattern__demo-box-title">View</h3>
     <div class="drizzle-pattern__demo-box drizzle-pattern__demo-box--view {{data.previewClass}}">
       {{{pattern id @root}}}

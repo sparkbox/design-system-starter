@@ -1,59 +1,59 @@
 spacing-classes:
-  - class: u-margin-bottom-none
+  - class: util-margin-bottom-none
     description: Removes margin from the bottom of an element.
-  - class: u-margin-bottom-xs
+  - class: util-margin-bottom-xs
     description: Adds an extra small amount of margin to the bottom of an element.
-  - class: u-margin-bottom-sm
+  - class: util-margin-bottom-sm
     description: Adds a small amount of margin to the bottom of an element.
-  - class: u-margin-bottom-md
+  - class: util-margin-bottom-md
     description: Adds a medium amount of margin to the bottom of an element.
-  - class: u-margin-bottom-lg
+  - class: util-margin-bottom-lg
     description: Adds a large amount of margin to the bottom of an element.
-  - class: u-margin-bottom-xl
+  - class: util-margin-bottom-xl
     description: Adds an extra large amount of margin to the bottom of an element.
-  - class: u-margin-bottom-xxl
+  - class: util-margin-bottom-xxl
     description: Adds an extra extra large amount of margin to the bottom of an element.
-  - class: u-margin-top-none
+  - class: util-margin-top-none
     description: Removes margin from the top of an element.
-  - class: u-margin-top-xs
+  - class: util-margin-top-xs
     description: Adds an extra small amount of margin to the top of an element.
-  - class: u-margin-top-sm
+  - class: util-margin-top-sm
     description: Adds a small amount of margin to the top of an element.
-  - class: u-margin-top-md
+  - class: util-margin-top-md
     description: Adds a medium amount of margin to the top of an element.
-  - class: u-margin-top-lg
+  - class: util-margin-top-lg
     description: Adds a large amount of margin to the top of an element.
-  - class: u-margin-top-xl
+  - class: util-margin-top-xl
     description: Adds an extra large amount of margin to the top of an element.
-  - class: u-margin-top-xxl
+  - class: util-margin-top-xxl
     description: Adds an extra extra large amount of margin to the top of an element.
 
 padding-classes:
-  - class: u-padding-bottom-none
+  - class: util-padding-bottom-none
     description: Removes padding from the bottom of an element.
-  - class: u-padding-bottom-xs
+  - class: util-padding-bottom-xs
     description: Adds an extra small amount of padding to the bottom of an element.
-  - class: u-padding-bottom-sm
+  - class: util-padding-bottom-sm
     description: Adds a small amount of padding to the bottom of an element.
-  - class: u-padding-bottom-md
+  - class: util-padding-bottom-md
     description: Adds a medium amount of padding to the bottom of an element.
-  - class: u-padding-bottom-lg
+  - class: util-padding-bottom-lg
     description: Adds a large amount of padding to the bottom of an element.
-  - class: u-padding-bottom-xl
+  - class: util-padding-bottom-xl
     description: Adds an extra large amount of padding to the bottom of an element.
-  - class: u-padding-bottom-xxl
+  - class: util-padding-bottom-xxl
     description: Adds an extra extra large amount of padding to the bottom of an element.
-  - class: u-padding-top-none
+  - class: util-padding-top-none
     description: Removes padding from the top of an element.
-  - class: u-padding-top-xs
+  - class: util-padding-top-xs
     description: Adds an extra small amount of padding to the top of an element.
-  - class: u-padding-top-sm
+  - class: util-padding-top-sm
     description: Adds a small amount of padding to the top of an element.
-  - class: u-padding-top-md
+  - class: util-padding-top-md
     description: Adds a medium amount of padding to the top of an element.
-  - class: u-padding-top-lg
+  - class: util-padding-top-lg
     description: Adds a large amount of padding to the top of an element.
-  - class: u-padding-top-xl
+  - class: util-padding-top-xl
     description: Adds an extra large amount of padding to the top of an element.
-  - class: u-padding-top-xxl
+  - class: util-padding-top-xxl
     description: Adds an extra extra large amount of padding to the top of an element.

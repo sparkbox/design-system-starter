@@ -5,7 +5,7 @@ $side: (
   right
 );
 
-.u-margin {
+.util-margin {
   // This outputs regular spacing classes
   @each $side in $side {
     &-#{$side} {
@@ -33,7 +33,7 @@ $side: (
   }
 }
 
-.u-padding {
+.util-padding {
   // This outputs regular spacing classes
   @each $side in $side {
     &-#{$side} {
