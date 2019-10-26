@@ -45,6 +45,7 @@
     "express-basic-auth": "^1.2.0",
     "lodash": "^4.17.5",
     "prism-themes": "^1.1.0",
+    "svg4everybody": "^2.1.9",
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
