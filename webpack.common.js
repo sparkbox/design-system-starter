@@ -41,7 +41,12 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: !PRODUCTION }
+            options: {
+              sourceMap: !PRODUCTION,
+              sassOptions: {
+                outputStyle: PRODUCTION ? 'compressed' : 'expanded'
+              }
+            }
           }
         ]
       },
