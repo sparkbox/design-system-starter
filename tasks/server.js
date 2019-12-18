@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3030;
 
 if (process.env.NODE_ENV === 'production') {
   const basicAuth = require('express-basic-auth');

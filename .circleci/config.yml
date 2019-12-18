@@ -37,3 +37,4 @@ jobs:
       # run all linting and testing
       - run: npm run lint
       - run: npm t
+      - run: npm run lighthouse
