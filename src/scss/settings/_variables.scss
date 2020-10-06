@@ -4,44 +4,12 @@
 $font-stack-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 //
-// BREAKPOINTS
-//
-$bp-sm: 30rem;
-$bp-md: 50rem;
-$bp-lg: 60rem;
-$bp-xl: 80rem;
-
-$grid-breakpoints: (
-  sm: $bp-sm,
-  md: $bp-md,
-  lg: $bp-lg,
-  xl: $bp-xl
-);
-
-//
 // LENGTHS
 //
 $page-margin: 1.75rem;
 
 $max-page-width: 53rem;
 
-//
-// SPACING
-//
-$spacer: 1rem;
-$spacers: () !default;
-$spacers: map-merge(
-  (
-    none: 0,
-    xs: $spacer * 0.25,
-    sm: $spacer * 0.5,
-    md: $spacer,
-    lg: $spacer * 1.5,
-    xl: $spacer * 3,
-    xxl: $spacer * 5,
-  ),
-  $spacers
-);
 
 //
 // LINE HEIGHTS

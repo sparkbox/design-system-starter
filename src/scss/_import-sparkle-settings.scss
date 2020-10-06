@@ -1,0 +1,18 @@
+$settings: map-merge(
+  $settings,
+    (
+    'prefix': 'utility',
+    'loop-mq': true,
+    'print-classes': true,
+    'utility-background-color': true,
+    'utility-border-color': true,
+    'utility-foreground-color': true,
+    'utility-outline-color': true,
+    'utility-text-decoration-color': true,
+    'utility-z-index': true,
+    'utility-display': true,
+    'utility-position': true,
+    'utility-text-align': true,
+    'utility-visually-hidden': true
+    )
+);

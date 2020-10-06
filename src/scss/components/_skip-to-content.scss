@@ -2,7 +2,7 @@
   position: absolute;
   top: 1rem;
   left: -100%;
-  z-index: $z-index-skip-to-link;
+  z-index: z-index(10);
 
   &:focus {
     left: 1rem;

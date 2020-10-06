@@ -2,7 +2,7 @@
   &__button {
     position: relative;
 
-    z-index: $z-index-expandable-content-button;
+    z-index: z-index(1);
   }
 
   &__content {

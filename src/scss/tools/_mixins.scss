@@ -1,38 +1,3 @@
-@mixin clearfix {
-  &::after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-}
-
-@mixin unbuttonize {
-  // This removes styles added by default to button elements.
-  // For when something should semantically be a button,
-  // but isn't buttony in appearance.
-  background-color: transparent;
-  color: inherit;
-  border: none;
-  margin: 0;
-  padding: 0;
-  text-align: inherit;
-  font: inherit;
-  border-radius: 0;
-  appearance: none; // Just in case we missed anything.
-}
-
-// Auto-generates media queries for looping content
-@mixin loop-mq {
-  @content;
-  @each $key, $val in $grid-breakpoints {
-    @media (min-width: #{$val}) {
-      &\@#{$key} {
-        @content;
-      }
-    }
-  }
-}
-
 @mixin default-paragraph {
   margin: 0 0 space(lg);
 
@@ -175,25 +140,6 @@
   font-weight: normal;
 
   margin: 0 0 space(md);
-}
-
-@mixin visually-hidden($status:null) {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); // IE6, IE7
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-
-  @if $status == 'disable' {
-    position: static !important;
-    clip: auto !important;
-    height: auto !important;
-    width: auto !important;
-    overflow: visible;
-  }
 }
 
 @mixin focus-styles {

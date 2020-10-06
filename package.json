@@ -38,6 +38,7 @@
   ],
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
+    "@sparkbox/sparkle": "^0.2.0",
     "autoprefixer": "^9.4.2",
     "babel-loader": "^8.0.4",
     "core-js": "^3.1.3",
