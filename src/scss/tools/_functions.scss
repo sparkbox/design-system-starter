@@ -1,3 +1,0 @@
-@function space($key) {
-  @return map-get($spacers, $key);
-}
